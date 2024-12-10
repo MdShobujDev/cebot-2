@@ -8,9 +8,27 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        barlow: ["var(--font-barlow)", "sans-serif"],
+        almarai: ["var(--font-almarai)", "sans-serif"],
+      },
+
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: {
+          blue: "#539DE1",
+          lilac: "#8EA9F1",
+          indigo: "#3A47E1",
+        },
+        secondary: {
+          pink: "#539DE1",
+          purple: "#874BF6",
+        },
+        neutrals: {
+          black: "#000000",
+          "dark-grey": "#C4C8CC",
+          "light-grey": "#E6EAF3",
+          white: "#FFFFFF",
+        },
       },
     },
   },

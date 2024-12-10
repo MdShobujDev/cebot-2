@@ -1,17 +1,8 @@
+import Footer from "@/components/Footer";
+import NavBar from "@/components/NavBar";
+import { Almarai, Barlow } from "@/utils/customFonts";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,9 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${Barlow.variable} ${Almarai.variable} antialiased max-w-[1440px] mx-auto px-11 bg-neutrals-black text-neutrals-white relative`}
       >
+        <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
