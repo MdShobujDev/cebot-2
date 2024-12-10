@@ -27,7 +27,7 @@ function Header() {
           }}
         >
           <h3 className=" font-light text-[28px] -tracking-[.5px] text-neutrals-light-grey">
-            Streamline your Portfolio with{" "}
+            Streamline your Portfolio with
           </h3>
           <h3 className=" font-semibold italic text-[28px]">
             CEBOT's Automatic Conversion Feature
@@ -43,7 +43,7 @@ function Header() {
           <div className=" flex-1 flex flex-col gap-10">
             <p className=" font-light text-neutrals-light-grey">
               Take control of your cryptocurrency portfolio like a pro. With
-              CEBOT's Automatic Conversions, you can effortlessly convert
+              CEBOTs Automatic Conversions, you can effortlessly convert
               incoming cryptocurrencies into any other supported coins,
               including stablecoins, enhancing your asset management strategy.
             </p>
