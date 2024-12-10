@@ -30,7 +30,7 @@ function Header() {
             Streamline your Portfolio with
           </h3>
           <h3 className=" font-semibold italic text-[28px]">
-            CEBOT's Automatic Conversion Feature
+            CEBOTs Automatic Conversion Feature
           </h3>
         </div>
         <div className=" mt-5 flex items-start">
