@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Logo from "@/../public/logo/Blue.svg";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "./Buttons/Button";
+import Button from "./Buttons/PrimaryButton";
 
 function NavBar() {
   const { scrollY } = useScroll();
@@ -23,7 +23,7 @@ function NavBar() {
         background,
         height,
       }}
-      className=" sticky top-0 font-barlow py-10 flex justify-between items-center z-20"
+      className=" sticky top-0 font-barlow py-10 flex justify-between items-center z-50"
     >
       <div className="cursor-pointer ">
         <Link href="/">

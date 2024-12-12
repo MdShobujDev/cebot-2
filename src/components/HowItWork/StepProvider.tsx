@@ -5,15 +5,7 @@ import { Popover, Steps } from "antd";
 import React, { useState } from "react";
 
 const customDot: StepsProps["progressDot"] = (dot, { status, index }) => (
-  <Popover
-    content={
-      <span>
-        Step {index} - Status: {status}
-      </span>
-    }
-  >
-    {dot}
-  </Popover>
+  <Popover content={<span>{status}</span>}>{dot}</Popover>
 );
 
 type StepProviderProps = {

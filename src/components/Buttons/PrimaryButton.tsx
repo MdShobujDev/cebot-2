@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-function Button() {
+function PrimaryButton() {
   return (
     <div>
       <Link
@@ -22,4 +22,4 @@ function Button() {
   );
 }
 
-export default Button;
+export default PrimaryButton;

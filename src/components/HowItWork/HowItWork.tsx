@@ -19,7 +19,7 @@ function HowItWork({ title, description, image }: PropsType) {
       className="flex gap-4"
     >
       <div className="flex-1 w-full flex flex-col gap-5">
-        <SecondaryButton />
+        <SecondaryButton color="#fff" />
         <h1 className="font-almarai font-light text-6xl -tracking-[1px]">
           {title}
         </h1>

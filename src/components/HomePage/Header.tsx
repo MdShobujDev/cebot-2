@@ -1,10 +1,10 @@
 import Abstract2g from "@/../public/images/abstract2g.png";
 import { IoPlayCircleOutline } from "react-icons/io5";
-import Button from "../Buttons/Button";
+import Button from "../Buttons/PrimaryButton";
 
 function Header() {
   return (
-    <header className=" pb-10">
+    <header className="pb-10">
       <div
         className="h-[90vh] bg-contain bg-no-repeat bg-center font-almarai font-light text-8xl flex flex-col justify-center items-center uppercase -tracking-[2px] px-28 gap-5"
         style={{ backgroundImage: `url(${Abstract2g.src})` }}
