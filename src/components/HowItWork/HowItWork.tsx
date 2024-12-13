@@ -19,7 +19,10 @@ function HowItWork({ title, description, image }: PropsType) {
       className="flex gap-4"
     >
       <div className="flex-1 w-full flex flex-col gap-5">
-        <SecondaryButton color="#fff" />
+        <SecondaryButton
+          color="#fff"
+          bgColor="linear-gradient(180deg, rgba(58, 71, 225, 0) 0%, rgba(58, 71, 225, 0.5) 100%)"
+        />
         <h1 className="font-almarai font-light text-6xl -tracking-[1px]">
           {title}
         </h1>

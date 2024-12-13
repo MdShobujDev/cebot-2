@@ -9,7 +9,10 @@ function PrivacySecurity() {
       <div className=" bg-[#E9E9E9] w-full text-black p-24 flex items-center justify-between rounded-b-[50px] gap-10 relative">
         <div className=" flex flex-col flex-1 gap-36 z-20">
           <div>
-            <SecondaryButton color={"#3A47E1"} />
+            <SecondaryButton
+              color={"#3A47E1"}
+              bgColor="linear-gradient(180deg, rgba(58, 71, 225, 0) 0%, rgba(58, 71, 225, 0.5) 100%)"
+            />
             <h1 className=" font-almarai font-light text-6xl leading-[57px] mt-3 -tracking-[1px]">
               Privacy & Security
             </h1>
