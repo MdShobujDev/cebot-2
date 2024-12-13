@@ -1,7 +1,7 @@
 import group_image from "@/../public/images/PrivacyAndSecurity/group_image.svg";
 import Lock from "@/../public/images/PrivacyAndSecurity/lock.svg";
 import Image from "next/image";
-import SecondaryButton from "../Buttons/SecondaryButton";
+import SecondaryButton from "../../Buttons/SecondaryButton";
 
 function PrivacySecurity() {
   return (

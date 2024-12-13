@@ -1,5 +1,5 @@
 import technology from "@/../public/images/technology.svg";
-import SecondaryButton from "../Buttons/SecondaryButton";
+import SecondaryButton from "../../Buttons/SecondaryButton";
 
 function Technology() {
   return (

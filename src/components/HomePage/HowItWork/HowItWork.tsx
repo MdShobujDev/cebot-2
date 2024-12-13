@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import SecondaryButton from "../Buttons/SecondaryButton";
+import SecondaryButton from "../../Buttons/SecondaryButton";
 
 type PropsType = {
   title: string;
