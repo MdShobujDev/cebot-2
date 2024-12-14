@@ -16,7 +16,7 @@ function Services() {
           </h1>
         </div>
       </div>
-      <div className=" h-screen w-full px-24 py-10">
+      <div className=" w-full px-24 py-10">
         <ServiceTabs />
       </div>
     </section>

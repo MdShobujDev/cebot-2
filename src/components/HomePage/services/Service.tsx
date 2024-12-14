@@ -60,7 +60,7 @@ type serviceProps = {
 function Service({ index }: serviceProps) {
   return (
     <section className=" text-white">
-      <div className=" flex items-center py-20 gap-10">
+      <div className=" flex items-center py-10 gap-10">
         <div className=" flex-[0_0_40%]">
           <Image src={items[index].image} alt="CEBOT_Image" />
         </div>
