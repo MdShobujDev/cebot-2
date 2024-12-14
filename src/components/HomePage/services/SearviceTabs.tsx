@@ -3,6 +3,7 @@ import type { TabsProps } from "antd";
 import { Tabs } from "antd";
 import React from "react";
 import Service from "./Service";
+import "./insex.css"; // Import custom CSS
 
 const items: TabsProps["items"] = [
   {
@@ -32,6 +33,8 @@ const items: TabsProps["items"] = [
   },
 ];
 
-const ServiceTabs: React.FC = () => <Tabs defaultActiveKey="1" items={items} />;
+const ServiceTabs: React.FC = () => (
+  <Tabs className="custom-tabs" centered defaultActiveKey="1" items={items} />
+);
 
 export default ServiceTabs;
