@@ -40,7 +40,7 @@ function NavBar() {
         </ul>
       </div>
       <div>
-        <Button />
+        <Button text="START NOW" />
       </div>
     </motion.nav>
   );

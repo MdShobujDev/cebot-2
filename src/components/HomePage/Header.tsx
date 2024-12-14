@@ -47,7 +47,7 @@ function Header() {
               incoming cryptocurrencies into any other supported coins,
               including stablecoins, enhancing your asset management strategy.
             </p>
-            <Button />
+            <Button text="START NOW" />
           </div>
         </div>
       </div>

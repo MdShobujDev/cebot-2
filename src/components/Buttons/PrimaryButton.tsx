@@ -1,11 +1,15 @@
 import Link from "next/link";
 
-function PrimaryButton() {
+type primaryButtonProps = {
+  text: string;
+};
+
+function PrimaryButton({ text }: primaryButtonProps) {
   return (
     <div>
       <Link
         href="/"
-        className="px-5 py-3 font-medium relative inline-block overflow-hidden rounded-[50px]"
+        className="px-5 py-3 font-medium relative inline-block overflow-hidden rounded-[50px] uppercase"
         style={{
           border: "2px solid transparent",
           borderRadius: "50px",
@@ -16,7 +20,7 @@ function PrimaryButton() {
           backgroundClip: "padding-box, border-box",
         }}
       >
-        START NOW
+        {text}
       </Link>
     </div>
   );
