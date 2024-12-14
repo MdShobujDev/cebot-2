@@ -20,12 +20,12 @@ function Support() {
           </div>
           <div className=" font-barlow">
             <p className="font-light">
-              Enjoy the flexibility of managing multiple cryptocurrencies all in
+              {`Enjoy the flexibility of managing multiple cryptocurrencies all in
               one place. CEBOT supports a wide range of popular digital assets,
               allowing you to diversify your portfolio with ease. Whether you're
               dealing with Bitcoin (BTC), Ethereum (ETH), Tether (USDT - ERC-20,
               TRC-20), USD Coin (USDC), Binance Coin (BNB), Litecoin (LTC), Tron
-              (TRX), Solana (SOL), or Toncoin (TON).
+              (TRX), Solana (SOL), or Toncoin (TON).`}
             </p>
             <p className=" font-medium text-lg  mt-3">
               Our platform provides a seamless and user-friendly experience to

@@ -19,7 +19,7 @@ function ContactUs() {
           Do you have any questions?
         </h1>
         <p className=" font-barlow font-light text-neutrals-dark-grey">
-          Contact us, and we'll get back to you within a minute.
+          {`Contact us, and we'll get back to you within a minute.`}
         </p>
         <PrimaryButton text="CONTACT US" />
       </div>
