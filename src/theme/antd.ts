@@ -6,19 +6,6 @@ const theme: ThemeConfig = {
     fontFamily: "var(--font-barlow)",
   },
   components: {
-    Steps: {
-      dotSize: 15,
-      lineWidth: 5,
-      colorPrimary: "#fff",
-      navContentMaxWidth: "200px",
-      colorTextDisabled: "#1B232B",
-      controlHeight: 60,
-      colorSplit: "#1B232B",
-      margin: 12,
-      dotCurrentSize: 15,
-      colorText: "#8EA9F1",
-      colorTextDescription: "#C4C8CC",
-    },
     Tabs: {
       colorPrimary: "#3A47E1",
       inkBarColor: "#3A47E1",

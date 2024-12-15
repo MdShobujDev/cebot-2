@@ -15,6 +15,7 @@ interface Step {
 }
 function HowItWorks() {
   const [current, setCurrent] = useState(0);
+  const [isOpen, setIsOpen] = useState(true);
   const steps: Step[] = [
     {
       title: "Automated Crypto Reception",
@@ -44,19 +45,34 @@ function HowItWorks() {
 
   const handleCurrentIndex = (current: number) => {
     setCurrent(current);
+    setIsOpen((prev) => !prev);
   };
+  const handleClick = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   return (
-    <section className=" w-full  flex items-center justify-center pt-16">
-      <div className=" flex justify-between w-full ">
-        <div className=" basis-[25%] h-[90vh]">
+    <section className=" w-full flex items-center justify-center pt-16 pb-10 relative">
+      <div className="flex min-[1200px]:flex-row flex-col justify-between w-full min-[1200px]:gap-0 gap-7">
+        <div
+          className="min-[1200px]:basis-[22%] min-[575px]:static absolute top-32 min-[575px]:w-full w-1/2 min-[575px]:!bg-none min-[575px]:p-0 p-5 rounded-lg transition-all duration-200 ease-out 
+        "
+          style={{
+            background:
+              "linear-gradient(158.86deg, #030C14 14.57%, #060D32 47.39%, #030B1F 94.45%)",
+            left: isOpen ? "-300px" : "0px",
+          }}
+        >
           <StepProvider handleCurrentIndex={handleCurrentIndex} />
         </div>
-        <div className="basis-[75%] flex flex-col">
-          <div className="min-w-full min-h-[90vh] ">
+
+        <div className="min-[1200px]:basis-[78%]">
+          <div className="min-w-full">
             <HowItWork
               title={steps[current].title}
               description={steps[current].description}
               image={steps[current].image}
+              handleClick={handleClick}
             />
           </div>
         </div>

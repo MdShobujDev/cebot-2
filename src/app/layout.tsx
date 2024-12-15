@@ -21,7 +21,8 @@ export default function RootLayout({
     <ConfigProvider theme={theme}>
       <html lang="en">
         <body
-          className={`${Barlow.variable} ${Almarai.variable} antialiased max-w-[1440px] mx-auto px-11 bg-neutrals-black text-neutrals-white relative scroll-smooth`}
+          className={`${Barlow.variable} ${Almarai.variable} antialiased max-w-[1440px] mx-auto px-5
+          md:px-10 bg-neutrals-black text-neutrals-white relative scroll-smooth`}
         >
           <AntdRegistry>
             <NavBar />

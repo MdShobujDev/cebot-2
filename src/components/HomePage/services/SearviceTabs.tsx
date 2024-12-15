@@ -3,7 +3,7 @@ import type { TabsProps } from "antd";
 import { Tabs } from "antd";
 import React from "react";
 import Service from "./Service";
-import "./insex.css"; // Import custom CSS
+import "./service.css"; // Import custom CSS
 
 const items: TabsProps["items"] = [
   {

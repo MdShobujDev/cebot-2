@@ -1,9 +1,0 @@
-.ant-tabs-nav {
-  max-width: max-content;
-  align-self: center;
-}
-@media only screen and (max-width: 986px) {
-  .ant-tabs-nav {
-    align-self: normal;
-  }
-}

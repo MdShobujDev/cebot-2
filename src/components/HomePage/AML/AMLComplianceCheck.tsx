@@ -4,34 +4,35 @@ import Image from "next/image";
 
 function AMLComplianceCheck() {
   return (
-    <section className=" bg-[#030C14] w-full">
-      <div className=" bg-[#052542] w-full text-white px-24 pb-10 flex items-center justify-between rounded-b-[50px] gap-10 relative">
-        <div className="flex flex-col flex-[0_0_60%] gap-36">
-          <div>
+    <section className="bg-[#030C14] w-full">
+      <div className="bg-[#052542] w-full text-white pl-8 pr-8 lg:pr-24 flex items-center justify-between rounded-b-[50px] gap-10 relative">
+        <div className="md:py-24 py-14 flex flex-col min-[1100px]:flex-[0_0_60%] gap-36">
+          <header>
             <SecondaryButton
-              color="#ffffff"
-              bgColor="linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100%)"
+              href="/"
+              textColor="#ffffff"
+              backgroundColor="linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100%)"
             />
-            <h1 className=" font-almarai font-light text-6xl leading-[57px] mt-3 -tracking-[1px]">
+            <h1 className="font-almarai font-light sm:text-6xl text-3xl mt-3 -tracking-[1px]">
               AML Compliance Check
             </h1>
-          </div>
-          <div className=" font-barlow">
-            <p className="font-light">
+          </header>
+          <article className="font-barlow">
+            <p className="font-light sm:text-base text-xs">
               Stay compliant and secure with our integrated Anti-Money
               Laundering (AML) risk assessment tool. Cebot enables you to check
               any cryptocurrency address for AML risks, helping you avoid
               suspicious activities and ensuring that your transactions meet
               regulatory standards.
             </p>
-            <p className=" font-medium text-lg  mt-3">
+            <p className="font-medium sm:text-lg text-base mt-3">
               This feature empowers you to conduct due diligence effortlessly,
               promoting transparency and trust in all your crypto dealings.
             </p>
-          </div>
+          </article>
         </div>
-        <div className=" ">
-          <Image src={AML} alt="AML" width={350} />
+        <div className="py-10 self-center min-[1100px]:block hidden">
+          <Image src={AML} alt="AML Compliance Illustration" width={350} />
         </div>
       </div>
     </section>

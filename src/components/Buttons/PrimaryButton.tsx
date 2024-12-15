@@ -1,15 +1,16 @@
 import Link from "next/link";
 
-type primaryButtonProps = {
+type PrimaryButtonProps = {
   text: string;
+  href: string;
 };
 
-function PrimaryButton({ text }: primaryButtonProps) {
+const PrimaryButton: React.FC<PrimaryButtonProps> = ({ text, href }) => {
   return (
     <div>
       <Link
-        href="/"
-        className="px-5 py-3 font-medium relative inline-block overflow-hidden rounded-[50px] uppercase"
+        href={href}
+        className="sm:px-5 sm:py-3 px-4 py-2 font-medium relative inline-block overflow-hidden rounded-[50px] uppercase sm:text-base text-sm"
         style={{
           border: "2px solid transparent",
           borderRadius: "50px",
@@ -24,6 +25,6 @@ function PrimaryButton({ text }: primaryButtonProps) {
       </Link>
     </div>
   );
-}
+};
 
 export default PrimaryButton;

@@ -8,10 +8,19 @@ import icon_2 from "@/../public/images/services/icon_2.svg";
 import icon_3 from "@/../public/images/services/icon_3.svg";
 import icon_4 from "@/../public/images/services/icon_4.svg";
 import icon_5 from "@/../public/images/services/icon_5.svg";
+import Image, { StaticImageData } from "next/image";
 
-import Image from "next/image";
+// Define the structure for each item in the list
+type ServiceItem = {
+  id: number;
+  image: StaticImageData;
+  icon: StaticImageData;
+  title: string;
+  Descriptions: string;
+};
 
-const items = [
+// Array of service items
+const items: ServiceItem[] = [
   {
     id: 1,
     image: CEBOT_1,
@@ -53,31 +62,46 @@ const items = [
   },
 ];
 
-type serviceProps = {
+// Define props type
+type ServiceProps = {
   index: number;
 };
 
-function Service({ index }: serviceProps) {
+const Service = ({ index }: ServiceProps) => {
+  const item = items[index];
+
   return (
-    <section className=" text-white">
-      <div className=" flex items-center py-10 gap-10">
-        <div className=" flex-[0_0_40%]">
-          <Image src={items[index].image} alt="CEBOT_Image" />
+    <section className="text-white">
+      <div className="flex items-center py-10 gap-10">
+        {/* Left Section with Image */}
+        <div className="flex-[0_0_40%] min-[520px]:block hidden">
+          <Image src={item.image} alt="CEBOT_Image" />
         </div>
-        <div className=" flex-[0_0_55%]">
-          <div>
-            <Image src={items[index].icon} alt="icon" />
+
+        {/* Right Section with Content */}
+        <div className="min-[520px]:flex-[0_0_55%]">
+          <div className="flex gap-2 min-[520px]:flex-col min-[520px]:items-start items-center justify-center">
+            <div className="md:w-full w-10">
+              <Image src={item.icon} alt="icon" />
+            </div>
+            <h2 className="font-almarai font-bold sm:text-3xl text-2xl">
+              {item.title}
+            </h2>
           </div>
-          <h2 className=" font-almarai font-bold text-[30px]">
-            {items[index].title}
-          </h2>
-          <p className=" font-barlow font-light text-neutrals-dark-grey">
-            {items[index].Descriptions}
+
+          {/* Mobile View Image */}
+          <div className="flex min-[520px]:hidden">
+            <Image src={item.image} alt="CEBOT_Image" />
+          </div>
+
+          {/* Description */}
+          <p className="text-center min-[520px]:text-start font-barlow font-light text-neutrals-dark-grey sm:text-base text-xs">
+            {item.Descriptions}
           </p>
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default Service;
