@@ -25,14 +25,14 @@ function Header() {
         <motion.h1
           initial={{
             opacity: 0,
-            x: 30,
+            x: 50,
           }}
           animate={{
             opacity: sliderIsInView ? 1 : 0,
-            x: sliderIsInView ? 0 : 30,
+            x: sliderIsInView ? 0 : 50,
           }}
           transition={{
-            duration: 0.2,
+            duration: 0.3,
             ease: "linear",
             stiffness: 200,
             type: "spring",
@@ -44,14 +44,14 @@ function Header() {
         <motion.h1
           initial={{
             opacity: 0,
-            x: -30,
+            x: -50,
           }}
           animate={{
             opacity: sliderIsInView ? 1 : 0,
-            x: sliderIsInView ? 0 : -30,
+            x: sliderIsInView ? 0 : -50,
           }}
           transition={{
-            duration: 0.2,
+            duration: 0.3,
             ease: "linear",
             stiffness: 200,
             type: "spring",
