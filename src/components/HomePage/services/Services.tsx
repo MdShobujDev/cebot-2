@@ -1,6 +1,12 @@
+"use client";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import ServiceTabs from "./SearviceTabs";
 
 function Services() {
+  const titleRef = useRef(null);
+  const titleIsInView = useInView(titleRef);
+
   return (
     <section className=" bg-[#030C14]">
       <div
@@ -11,9 +17,27 @@ function Services() {
         }}
       >
         <div>
-          <h1 className=" font-almarai font-light min-[1000px]:text-6xl min-[720px]:text-5xl sm:text-4xl text-3xl text-center sm:text-start ">
+          <motion.h1
+            ref={titleRef}
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: titleIsInView ? 1 : 0,
+              y: titleIsInView ? 0 : 20,
+            }}
+            transition={{
+              delay: 0.5,
+              duration: 0.3,
+              type: "spring",
+              stiffness: 200,
+              ease: "linear",
+            }}
+            className=" font-almarai font-light min-[1000px]:text-6xl min-[720px]:text-5xl sm:text-4xl text-3xl text-center sm:text-start "
+          >
             What can you do with <span className=" text-[#979EEE]">CEBOT</span>
-          </h1>
+          </motion.h1>
         </div>
       </div>
       <div className=" w-full px-8 lg:px-24 pb-10">

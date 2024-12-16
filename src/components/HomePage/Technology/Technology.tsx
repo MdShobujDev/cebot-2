@@ -1,9 +1,17 @@
+"use client";
 import technology from "@/../public/images/technology.svg";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import SecondaryButton from "../../Buttons/SecondaryButton";
 
 function Technology() {
+  const titleRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const titleIsInView = useInView(titleRef);
+  const descriptionIsInView = useInView(descriptionRef);
+
   return (
-    <section className="  bg-[#052542] w-full">
+    <section className="  bg-[#052542] w-full overflow-hidden">
       <div className="bg-[#3A47E1] w-full rounded-b-[50px] overflow-hidden">
         <div
           style={{
@@ -17,16 +25,52 @@ function Technology() {
           >
             <div className="flex flex-col lg:flex-[0_0_70%] gap-36">
               <div>
-                <SecondaryButton
-                  href="/"
-                  textColor="#ffffff"
-                  backgroundColor="linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100%)"
-                />
-                <h1 className=" font-almarai font-light sm:text-6xl text-3xl  mt-3 -tracking-[1px]">
+                <div className=" max-w-max">
+                  <SecondaryButton
+                    href="/"
+                    textColor="#ffffff"
+                    backgroundColor="linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100%)"
+                  />
+                </div>
+                <motion.h1
+                  ref={titleRef}
+                  initial={{
+                    x: 40,
+                    opacity: 0,
+                  }}
+                  animate={{
+                    x: titleIsInView ? 0 : 40,
+                    opacity: titleIsInView ? 1 : 0,
+                  }}
+                  transition={{
+                    type: "spring",
+                    duration: 0.3,
+                    delay: 0.5,
+                    stiffness: 200,
+                  }}
+                  className=" font-almarai font-light sm:text-6xl text-3xl  mt-3 -tracking-[1px]"
+                >
                   Advanced Technology
-                </h1>
+                </motion.h1>
               </div>
-              <div className=" font-barlow">
+              <motion.div
+                ref={descriptionRef}
+                initial={{
+                  x: 40,
+                  opacity: 0,
+                }}
+                animate={{
+                  x: descriptionIsInView ? 0 : 40,
+                  opacity: descriptionIsInView ? 1 : 0,
+                }}
+                transition={{
+                  type: "spring",
+                  duration: 0.3,
+                  delay: 0.5,
+                  stiffness: 200,
+                }}
+                className=" font-barlow"
+              >
                 <p className=" sm:text-lg text-base font-medium">
                   Harness the power of cutting-edge technology with Cebot.{" "}
                 </p>
@@ -40,7 +84,7 @@ function Technology() {
                   solutions ensure that you can conduct your crypto activities
                   securely and efficiently.
                 </p>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

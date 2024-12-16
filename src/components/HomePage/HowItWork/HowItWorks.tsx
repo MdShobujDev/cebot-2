@@ -52,7 +52,7 @@ function HowItWorks() {
   };
 
   return (
-    <section className=" w-full flex items-center justify-center pt-16 pb-10 relative">
+    <section className=" w-full flex items-center justify-center pt-16 pb-10 relative overflow-x-hidden">
       <div className="flex min-[1200px]:flex-row flex-col justify-between w-full min-[1200px]:gap-0 gap-7">
         <div
           className="min-[1200px]:basis-[22%] min-[575px]:static absolute top-32 min-[575px]:w-full w-1/2 min-[575px]:!bg-none min-[575px]:p-0 p-5 rounded-lg transition-all duration-200 ease-out 

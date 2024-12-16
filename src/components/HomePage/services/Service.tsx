@@ -1,3 +1,4 @@
+"use client";
 import CEBOT_1 from "@/../public/images/services/CEBOT_1.png";
 import CEBOT_2 from "@/../public/images/services/CEBOT_2.png";
 import CEBOT_3 from "@/../public/images/services/CEBOT_3.png";
@@ -8,7 +9,9 @@ import icon_2 from "@/../public/images/services/icon_2.svg";
 import icon_3 from "@/../public/images/services/icon_3.svg";
 import icon_4 from "@/../public/images/services/icon_4.svg";
 import icon_5 from "@/../public/images/services/icon_5.svg";
+import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
+import { useRef } from "react";
 
 // Define the structure for each item in the list
 type ServiceItem = {
@@ -69,37 +72,135 @@ type ServiceProps = {
 
 const Service = ({ index }: ServiceProps) => {
   const item = items[index];
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  };
 
   return (
-    <section className="text-white">
-      <div className="flex items-center py-10 gap-10">
+    <section className="text-white overflow-hidden">
+      <motion.div
+        ref={ref}
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? "show" : "hidden"}
+        className="flex items-center py-10 gap-10"
+      >
         {/* Left Section with Image */}
-        <div className="flex-[0_0_40%] min-[520px]:block hidden">
+        <motion.div
+          initial={{
+            opacity: 0,
+            scale: 0.7,
+          }}
+          animate={{
+            opacity: isInView ? 1 : 0,
+            scale: isInView ? 1 : 0.7,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 200,
+            duration: 0.3,
+          }}
+          className="flex-[0_0_40%] min-[520px]:block hidden"
+        >
           <Image src={item.image} alt="CEBOT_Image" />
-        </div>
+        </motion.div>
 
         {/* Right Section with Content */}
         <div className="min-[520px]:flex-[0_0_55%]">
-          <div className="flex gap-2 min-[520px]:flex-col min-[520px]:items-start items-center justify-center">
-            <div className="md:w-full w-10">
-              <Image src={item.icon} alt="icon" />
-            </div>
-            <h2 className="font-almarai font-bold sm:text-3xl text-2xl">
+          <div className="flex gap-2 min-[520px]:flex-col flex-row min-[520px]:items-start items-center justify-center w-full ">
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: 40,
+              }}
+              animate={{
+                opacity: isInView ? 1 : 0,
+                x: isInView ? 0 : 40,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                duration: 0.3,
+                delay: 0.08,
+              }}
+              className="md:w-full"
+            >
+              <div className="w-10">
+                <Image src={item.icon} alt="icon" />
+              </div>
+            </motion.div>
+            <motion.h2
+              initial={{
+                opacity: 0,
+                x: 40,
+              }}
+              animate={{
+                opacity: isInView ? 1 : 0,
+                x: isInView ? 0 : 40,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                duration: 0.3,
+                delay: 0.15,
+              }}
+              className="font-almarai font-bold sm:text-3xl text-xl "
+            >
               {item.title}
-            </h2>
+            </motion.h2>
           </div>
 
           {/* Mobile View Image */}
-          <div className="flex min-[520px]:hidden">
+          <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0.7,
+            }}
+            animate={{
+              opacity: isInView ? 1 : 0,
+              scale: isInView ? 1 : 0.7,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              duration: 0.3,
+            }}
+            className="flex min-[520px]:hidden mt-2"
+          >
             <Image src={item.image} alt="CEBOT_Image" />
-          </div>
+          </motion.div>
 
           {/* Description */}
-          <p className="text-center min-[520px]:text-start font-barlow font-light text-neutrals-dark-grey sm:text-base text-xs">
+          <motion.p
+            initial={{
+              opacity: 0,
+              x: 40,
+            }}
+            animate={{
+              opacity: isInView ? 1 : 0,
+              x: isInView ? 0 : 40,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              duration: 0.3,
+              delay: 0.2,
+            }}
+            className="text-center min-[520px]:text-start font-barlow font-light text-neutrals-dark-grey sm:text-base text-xs"
+          >
             {item.Descriptions}
-          </p>
+          </motion.p>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

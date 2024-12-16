@@ -93,7 +93,7 @@ const NavBar: React.FC = () => {
             </div>
 
             {/* Mobile Button */}
-            <div onClick={toggleMenu}>
+            <div onClick={toggleMenu} className=" max-w-max">
               <PrimaryButton text="START NOW" href="/" />
             </div>
           </div>

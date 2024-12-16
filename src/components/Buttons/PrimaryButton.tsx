@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 type PrimaryButtonProps = {
@@ -7,7 +10,17 @@ type PrimaryButtonProps = {
 
 const PrimaryButton: React.FC<PrimaryButtonProps> = ({ text, href }) => {
   return (
-    <div>
+    <motion.div
+      whileHover={{
+        scale: 0.92,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 10,
+        duration: 0.2,
+      }}
+    >
       <Link
         href={href}
         className="sm:px-5 sm:py-3 px-4 py-2 font-medium relative inline-block overflow-hidden rounded-[50px] uppercase sm:text-base text-sm"
@@ -23,7 +36,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({ text, href }) => {
       >
         {text}
       </Link>
-    </div>
+    </motion.div>
   );
 };
 
