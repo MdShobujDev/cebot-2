@@ -17,8 +17,7 @@ function Header() {
   return (
     <header className="pb-10">
       {/* top hero section  */}
-      <motion.div
-        ref={sliderRef}
+      <div
         className="md:h-[90vh] sm:h-[80vh] h-[70vh]  bg-contain bg-no-repeat bg-center font-almarai font-light flex flex-col justify-center items-center uppercase -tracking-[2px] px-5 gap-5 min-[1250px]:px-28 min-[900px]:px-20 text-4xl min-[1250px]:text-8xl sm:text-7xl min-[530px]:text-6xl min-[385px]:text-5xl overflow-x-hidden"
         style={{ backgroundImage: `url(${Abstract2g.src})` }}
       >
@@ -42,6 +41,7 @@ function Header() {
           Optimize Your <br /> Crypto Holdings
         </motion.h1>
         <motion.h1
+          ref={sliderRef}
           initial={{
             opacity: 0,
             x: -50,
@@ -60,7 +60,7 @@ function Header() {
         >
           with Automated <br /> conversions
         </motion.h1>
-      </motion.div>
+      </div>
 
       {/* bottom hero sections  */}
       <div className="font-barlow overflow-x-hidden">
