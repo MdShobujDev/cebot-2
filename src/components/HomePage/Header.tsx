@@ -1,5 +1,4 @@
 "use client";
-
 import Abstract2g from "@/../public/images/abstract2g.png";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -96,7 +95,7 @@ function Header() {
             CEBOTs Automatic Conversion Feature
           </h3>
         </motion.div>
-        <div ref={bottomRefBottom} className=" mt-5 flex items-start">
+        <div ref={bottomRefBottom} className="mt-5 flex items-start">
           <div className=" min-[550px]:flex flex-1 hidden items-center gap-2 text-primary-lilac ">
             <motion.div
               whileHover={{
@@ -116,7 +115,7 @@ function Header() {
               <span className=" font-bold">Play Reel</span>
             </motion.div>
           </div>
-          <div className=" flex-1 flex flex-col gap-10">
+          <div className=" flex-1 flex flex-col gap-10 overflow-hidden pl-2">
             <motion.p
               initial={{
                 opacity: 0,
@@ -146,7 +145,9 @@ function Header() {
                 </div>
                 <span className=" font-bold">Play Reel</span>
               </div>
-              <Button text="START NOW" href="/" />
+              <div className=" max-w-max">
+                <Button text="START NOW" href="/" />
+              </div>
             </div>
           </div>
         </div>
