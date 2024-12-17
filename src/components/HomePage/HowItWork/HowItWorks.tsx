@@ -1,10 +1,9 @@
 "use client";
-import Image_1 from "@/../public/images/HowItWork/img_2.svg";
-import Image_2 from "@/../public/images/HowItWork/img_3.svg";
-import {
-  default as Image_3,
-  default as Image_4,
-} from "@/../public/images/HowItWork/img_4.svg";
+import Image_1 from "@/../public/images/HowItWork/img_1.svg";
+import Image_2 from "@/../public/images/HowItWork/img_2.svg";
+import Image_3 from "@/../public/images/HowItWork/img_3.svg";
+import Image_4 from "@/../public/images/HowItWork/img_4.svg";
+
 import { StaticImageData } from "next/image";
 import React, { useState } from "react";
 import HowItWork from "./HowItWork";
