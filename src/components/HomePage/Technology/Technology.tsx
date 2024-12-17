@@ -85,12 +85,13 @@ function Technology() {
               </motion.div>
               <motion.div
                 animate={{
-                  y: [0, -5, 5, 0],
+                  y: [0, -7, 7, 0],
                 }}
                 transition={{
-                  duration: 3,
-                  ease: "linear",
                   repeat: Infinity,
+                  duration: 5,
+                  delay: 0.5,
+                  ease: "linear",
                 }}
                 className=" absolute right-0 top-0"
               >

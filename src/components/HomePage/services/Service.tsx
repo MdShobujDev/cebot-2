@@ -113,12 +113,13 @@ const Service = ({ index }: ServiceProps) => {
         >
           <motion.div
             animate={{
-              y: [0, -5, 5, 0],
+              y: [0, -7, 7, 0],
             }}
             transition={{
-              ease: "linear",
-              duration: 3,
               repeat: Infinity,
+              duration: 5,
+              delay: 0.5,
+              ease: "linear",
             }}
           >
             <Image src={item.image} alt="CEBOT_Image" />
