@@ -1,6 +1,7 @@
 "use client";
 import technology from "@/../public/images/technology.svg";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 import SecondaryButton from "../../Buttons/SecondaryButton";
 
@@ -19,13 +20,10 @@ function Technology() {
               "radial-gradient(43.11% 43.11% at 50% 50%, rgba(49, 189, 254, 0.5) 0%, rgba(58, 71, 225, 0.5) 100%)",
           }}
         >
-          <div
-            className="text-white md:py-24 py-14 pl-8 pr-8 min-[1030px]:pr-24 flex items-center justify-between bg-no-repeat bg-right bg-contain"
-            style={{ backgroundImage: `url(${technology.src})` }}
-          >
+          <div className="text-white md:py-24 py-14 pl-8 pr-8 min-[1030px]:pr-24 flex items-center justify-between relative">
             <div className="flex flex-col lg:flex-[0_0_70%] gap-36">
-              <div>
-                <div className=" max-w-max">
+              <div className=" z-20">
+                <div className=" max-w-max ">
                   <SecondaryButton
                     href="/"
                     textColor="#ffffff"
@@ -69,7 +67,7 @@ function Technology() {
                   delay: 0.5,
                   stiffness: 200,
                 }}
-                className=" font-barlow"
+                className=" font-barlow z-20"
               >
                 <p className=" sm:text-lg text-base font-medium">
                   Harness the power of cutting-edge technology with Cebot.{" "}
@@ -84,6 +82,19 @@ function Technology() {
                   solutions ensure that you can conduct your crypto activities
                   securely and efficiently.
                 </p>
+              </motion.div>
+              <motion.div
+                animate={{
+                  y: [0, -5, 5, 0],
+                }}
+                transition={{
+                  duration: 3,
+                  ease: "linear",
+                  repeat: Infinity,
+                }}
+                className=" absolute right-0 top-0"
+              >
+                <Image src={technology} alt="Technology" width={570} />
               </motion.div>
             </div>
           </div>

@@ -1,5 +1,4 @@
 "use client";
-import Chart from "@/../public/images/Chart.svg";
 import Ipad from "@/../public/images/Screen.png";
 import SecondaryButton from "@/components/Buttons/SecondaryButton";
 import { motion, useInView } from "framer-motion";
@@ -90,7 +89,7 @@ function Support() {
         >
           <Image src={Ipad} alt="Ipad" />
 
-          <div className=" bg-white/20 p-3 rounded-xl backdrop-blur-md absolute min-[1200px]:bottom-14 bottom-0 min-[1200px]:-left-[120px] -left-[0px]">
+          <div className=" bg-white/20 p-3 rounded-xl backdrop-blur-md absolute min-[1200px]:bottom-14 bottom-0 min-[1200px]:-left-[120px] -left-[0px] ">
             <h4 className=" font-barlow font-medium text-lg text-neutrals-dark-grey">
               Wallet
             </h4>
@@ -100,7 +99,65 @@ function Support() {
               </h1>
               <span>%</span>
             </div>
-            <Image src={Chart} alt="Chart" width={180} />
+            <svg
+              width="180"
+              height="68"
+              viewBox="0 0 221 68"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <motion.path
+                initial={{
+                  opacity: 0,
+                  pathLength: 0,
+                }}
+                animate={{
+                  opacity: descriptionIsInView ? 1 : 0,
+                  pathLength: descriptionIsInView ? 1 : 0,
+                }}
+                transition={{
+                  duration: 2,
+                  ease: "easeInOut",
+                }}
+                d="M0 66.7578C27.8998 66.7578 24.6002 14.2578 52.5 14.2578C80.3998 14.2578 76.1002 32.7578 104 32.7578C131.9 32.7578 126.1 38.2578 154 38.2578C181.9 38.2578 191.1 4.75781 219 4.75781"
+                stroke="white"
+                stroke-opacity="0.4"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <motion.path
+                initial={{
+                  opacity: 0,
+                  pathLength: 0,
+                }}
+                animate={{
+                  opacity: descriptionIsInView ? 1 : 0,
+                  pathLength: descriptionIsInView ? 1 : 0,
+                }}
+                transition={{
+                  duration: 2,
+                  ease: "easeInOut",
+                }}
+                d="M0 66.7578C27.2601 66.7578 30.7399 30.2578 58 30.2578C85.2601 30.2578 80.7399 1.25781 108 1.25781C135.26 1.25781 134.74 22.2578 162 22.2578C189.26 22.2578 192.24 4.75781 219.5 4.75781"
+                stroke="url(#paint0_radial_47_4244)"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <defs>
+                <radialGradient
+                  id="paint0_radial_47_4244"
+                  cx="0"
+                  cy="0"
+                  r="1"
+                  gradientUnits="userSpaceOnUse"
+                  gradientTransform="translate(176.234 53.7118) rotate(16.9496) scale(152.768 564.204)"
+                >
+                  <stop stop-color="#A5B7F8" />
+                  <stop offset="0.520098" stop-color="#E879F8" />
+                  <stop offset="1" stop-color="#F1A2AA" />
+                </radialGradient>
+              </defs>
+            </svg>
           </div>
         </div>
       </div>

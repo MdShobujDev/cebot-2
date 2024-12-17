@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
-import Image, { StaticImageData } from "next/image";
-import { useRef } from "react";
+import { StaticImageData } from "next/image";
+import React, { useRef } from "react";
 import { FaListUl } from "react-icons/fa6";
 import SecondaryButton from "../../Buttons/SecondaryButton";
 
@@ -8,10 +8,17 @@ type PropsType = {
   title: string;
   description: string;
   image: StaticImageData;
+  svg_icon: React.ReactNode;
   handleClick: () => void;
 };
 
-const HowItWork = ({ title, description, image, handleClick }: PropsType) => {
+const HowItWork = ({
+  title,
+  description,
+  svg_icon,
+  image,
+  handleClick,
+}: PropsType) => {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
@@ -102,7 +109,7 @@ const HowItWork = ({ title, description, image, handleClick }: PropsType) => {
 
       {/* Right Section: Image */}
       <motion.div
-        key={image.src}
+        key={title}
         initial={{
           opacity: 0,
           scale: 0.8,
@@ -116,9 +123,9 @@ const HowItWork = ({ title, description, image, handleClick }: PropsType) => {
           stiffness: 200,
           duration: 0.3,
         }}
-        className="min-[850px]:flex hidden flex-1 h-[462px] max-w-max items-center justify-center rounded overflow-hidden"
+        className="min-[850px]:flex hidden flex-1 h-[462px] max-w-max items-center justify-center rounded overflow-hidden "
       >
-        <Image src={image} alt="How it Works" />
+        {svg_icon}
       </motion.div>
     </motion.div>
   );

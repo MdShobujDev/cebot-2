@@ -1,9 +1,8 @@
 "use client";
-import AML from "@/../public/images/AML.svg";
 import SecondaryButton from "@/components/Buttons/SecondaryButton";
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
 import { useRef } from "react";
+import { Chart } from "./Icon";
 
 function AMLComplianceCheck() {
   const titleRef = useRef(null);
@@ -76,7 +75,7 @@ function AMLComplianceCheck() {
           </motion.article>
         </div>
         <div className="py-10 self-center min-[1100px]:block hidden">
-          <Image src={AML} alt="AML Compliance Illustration" width={350} />
+          <Chart />
         </div>
       </div>
     </section>

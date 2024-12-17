@@ -111,7 +111,18 @@ const Service = ({ index }: ServiceProps) => {
           }}
           className="flex-[0_0_40%] min-[520px]:block hidden"
         >
-          <Image src={item.image} alt="CEBOT_Image" />
+          <motion.div
+            animate={{
+              y: [0, -5, 5, 0],
+            }}
+            transition={{
+              ease: "linear",
+              duration: 3,
+              repeat: Infinity,
+            }}
+          >
+            <Image src={item.image} alt="CEBOT_Image" />
+          </motion.div>
         </motion.div>
 
         {/* Right Section with Content */}
