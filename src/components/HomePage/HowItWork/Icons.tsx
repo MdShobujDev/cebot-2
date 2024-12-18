@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-export function SVG_1() {
+export function SVG_1({ height = "463" }) {
   const ref = useRef(null);
   const isInView = useInView(ref);
   return (
@@ -9,7 +9,7 @@ export function SVG_1() {
       <svg
         ref={ref}
         width="451"
-        height="463"
+        height={height}
         viewBox="0 0 451 463"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -375,7 +375,7 @@ export function SVG_1() {
     </>
   );
 }
-export function SVG_2() {
+export function SVG_2({ height = "463" }) {
   const ref = useRef(null);
   const isInView = useInView(ref);
   return (
@@ -383,7 +383,7 @@ export function SVG_2() {
       <svg
         ref={ref}
         width="451"
-        height="463"
+        height={height}
         viewBox="0 0 451 463"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -893,7 +893,7 @@ export function SVG_2() {
     </>
   );
 }
-export function SVG_3() {
+export function SVG_3({ height = "463" }) {
   const ref = useRef(null);
   const isInView = useInView(ref);
   return (
@@ -901,7 +901,7 @@ export function SVG_3() {
       <svg
         ref={ref}
         width="451"
-        height="463"
+        height={height}
         viewBox="0 0 451 463"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -1412,7 +1412,7 @@ export function SVG_3() {
     </>
   );
 }
-export function SVG_4() {
+export function SVG_4({ height = "463" }) {
   const ref = useRef(null);
   const isInView = useInView(ref);
   return (
@@ -1420,7 +1420,7 @@ export function SVG_4() {
       <svg
         ref={ref}
         width="451"
-        height="463"
+        height={height}
         viewBox="0 0 451 463"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

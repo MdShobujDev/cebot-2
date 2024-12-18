@@ -1,10 +1,5 @@
 "use client";
-import Image_1 from "@/../public/images/HowItWork/img_1.svg";
-import Image_2 from "@/../public/images/HowItWork/img_2.svg";
-import Image_3 from "@/../public/images/HowItWork/img_3.svg";
-import Image_4 from "@/../public/images/HowItWork/img_4.svg";
 
-import { StaticImageData } from "next/image";
 import React, { useState } from "react";
 import HowItWork from "./HowItWork";
 import { SVG_1, SVG_2, SVG_3, SVG_4 } from "./Icons";
@@ -13,8 +8,8 @@ import StepProvider from "./StepProvider";
 interface Step {
   title: string;
   description: string;
-  svg_icon: React.ReactNode;
-  image: StaticImageData;
+  svg_icon_md: React.ReactNode;
+  svg_icon_sm: React.ReactNode;
 }
 function HowItWorks() {
   const [current, setCurrent] = useState(0);
@@ -25,29 +20,29 @@ function HowItWorks() {
       title: "Automated Crypto Reception",
       description:
         "As cryptocurrencies are received, they're instantly deposited into your CEBOT Exchange account.",
-      svg_icon: <SVG_1 />,
-      image: Image_1,
+      svg_icon_md: <SVG_1 />,
+      svg_icon_sm: <SVG_1 height="40vh" />,
     },
     {
       title: "Customizable Conversion Rules",
       description:
         "Set your preferred conversion parameters in advance. Choose which incoming cryptocurrencies you want to auto-convert and specify the target coins.",
-      svg_icon: <SVG_2 />,
-      image: Image_2,
+      svg_icon_md: <SVG_2 />,
+      svg_icon_sm: <SVG_2 height="40vh" />,
     },
     {
       title: "Seamless Asset Transition",
       description:
         "Our system follows your instructions precisely, automatically converting and redirecting funds to your selected supported coins.",
-      svg_icon: <SVG_3 />,
-      image: Image_3,
+      svg_icon_md: <SVG_3 />,
+      svg_icon_sm: <SVG_3 height="40vh" />,
     },
     {
       title: "Efficient Portfolio Management",
       description:
         "Simplify transactions and manage your assets effortlessly through our streamlined and automated process.",
-      svg_icon: <SVG_4 />,
-      image: Image_4,
+      svg_icon_md: <SVG_4 />,
+      svg_icon_sm: <SVG_4 height="40vh" />,
     },
   ];
 
@@ -79,8 +74,8 @@ function HowItWorks() {
             <HowItWork
               title={steps[current].title}
               description={steps[current].description}
-              svg_icon={steps[current].svg_icon}
-              image={steps[current].image}
+              svg_icon_md={steps[current].svg_icon_md}
+              svg_icon_sm={steps[current].svg_icon_sm}
               handleClick={handleClick}
             />
           </div>

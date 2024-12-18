@@ -1,34 +1,47 @@
 import { motion, useInView } from "framer-motion";
-import { StaticImageData } from "next/image";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaListUl } from "react-icons/fa6";
 import SecondaryButton from "../../Buttons/SecondaryButton";
 
 type PropsType = {
   title: string;
   description: string;
-  image: StaticImageData;
-  svg_icon: React.ReactNode;
+  svg_icon_md: React.ReactNode;
+  svg_icon_sm: React.ReactNode;
   handleClick: () => void;
 };
 
 const HowItWork = ({
   title,
   description,
-  svg_icon,
-  image,
+  svg_icon_md,
+  svg_icon_sm,
   handleClick,
 }: PropsType) => {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
+  const [width, setWidth] = useState(window.innerWidth);
+  const [fixedWidth, setFixedWidth] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (width < 850) {
+      setFixedWidth(true);
+    } else {
+      setFixedWidth(false);
+    }
+  }, [width]);
+
   return (
     <motion.div
       ref={ref}
-      className="flex gap-4 min-[850px]:p-0 p-4 bg-no-repeat bg-center h-[75vh] min-[850px]:h-auto bg-cover min-[850px]:!bg-none pb-10 "
-      style={{
-        backgroundImage: `url(${image.src})`,
-      }}
+      className="flex gap-4 min-[850px]:p-0 p-4 h-[80vh] min-[850px]:h-auto pb-10 "
     >
       {/* Left Section */}
       <div className="flex-1 w-full flex flex-col gap-5 min-[850px]:justify-normal justify-between">
@@ -84,6 +97,29 @@ const HowItWork = ({
             {title}
           </motion.h1>
         </div>
+        {/* for small device  */}
+        {fixedWidth && (
+          <motion.div
+            className=" self-center"
+            key={title}
+            initial={{
+              opacity: 0,
+              scale: 0.8,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+          >
+            {svg_icon_sm}
+          </motion.div>
+        )}
 
         <motion.p
           key={description}
@@ -125,7 +161,7 @@ const HowItWork = ({
         }}
         className="min-[850px]:flex hidden flex-1 h-[462px] max-w-max items-center justify-center rounded overflow-hidden "
       >
-        {svg_icon}
+        {svg_icon_md}
       </motion.div>
     </motion.div>
   );
