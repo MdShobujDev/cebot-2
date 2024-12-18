@@ -6,10 +6,15 @@ import PrivacySecurity from "@/components/HomePage/PrivacyAndSecurity/PrivacySec
 import Services from "@/components/HomePage/services/Services";
 import Support from "@/components/HomePage/Support/Support";
 import Technology from "@/components/HomePage/Technology/Technology";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <div>
+      <Head>
+        <title>Welcome to CEBOT Wallet</title>
+        <meta name="description" content="This is an awesome page for SEO" />
+      </Head>
       <Header />
       <HowItWorks />
       <PrivacySecurity />
