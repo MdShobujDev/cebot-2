@@ -1,4 +1,5 @@
 "use client";
+
 import { motion, useInView } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { FaListUl } from "react-icons/fa6";
@@ -22,27 +23,28 @@ const HowItWork = ({
   const ref = useRef(null);
   const isInView = useInView(ref);
 
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState<number | null>(null);
   const [fixedWidth, setFixedWidth] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const updateWidth = () => setWidth(window.innerWidth);
+
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+
+    return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
   useEffect(() => {
-    if (width < 850) {
-      setFixedWidth(true);
-    } else {
-      setFixedWidth(false);
+    if (width !== null) {
+      setFixedWidth(width < 850);
     }
   }, [width]);
 
   return (
     <motion.div
       ref={ref}
-      className="flex gap-4 min-[850px]:p-0 p-4 h-[80vh] min-[850px]:h-auto pb-10 "
+      className="flex gap-4 min-[850px]:p-0 p-4 h-[80vh] min-[850px]:h-auto pb-10"
     >
       {/* Left Section */}
       <div className="flex-1 w-full flex flex-col gap-5 min-[850px]:justify-normal justify-between">
@@ -55,14 +57,8 @@ const HowItWork = ({
             </div>
             <motion.div
               key={title}
-              initial={{
-                opacity: 0,
-                x: 40,
-              }}
-              animate={{
-                opacity: isInView ? 1 : 0,
-                x: isInView ? 0 : 40,
-              }}
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 40 }}
               transition={{
                 type: "spring",
                 stiffness: 200,
@@ -79,14 +75,8 @@ const HowItWork = ({
           </div>
           <motion.h1
             key={title}
-            initial={{
-              opacity: 0,
-              x: 40,
-            }}
-            animate={{
-              opacity: isInView ? 1 : 0,
-              x: isInView ? 0 : 40,
-            }}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 40 }}
             transition={{
               type: "spring",
               stiffness: 200,
@@ -98,19 +88,13 @@ const HowItWork = ({
             {title}
           </motion.h1>
         </div>
-        {/* for small device  */}
+        {/* For small devices */}
         {fixedWidth && (
           <motion.div
-            className=" self-center"
+            className="self-center"
             key={title}
-            initial={{
-              opacity: 0,
-              scale: 0.8,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-            }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{
               type: "spring",
               stiffness: 200,
@@ -124,14 +108,8 @@ const HowItWork = ({
 
         <motion.p
           key={description}
-          initial={{
-            opacity: 0,
-            x: 40,
-          }}
-          animate={{
-            opacity: isInView ? 1 : 0,
-            x: isInView ? 0 : 40,
-          }}
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 40 }}
           transition={{
             type: "spring",
             stiffness: 200,
@@ -147,20 +125,14 @@ const HowItWork = ({
       {/* Right Section: Image */}
       <motion.div
         key={title}
-        initial={{
-          opacity: 0,
-          scale: 0.8,
-        }}
-        animate={{
-          opacity: isInView ? 1 : 0,
-          scale: isInView ? 1 : 0.8,
-        }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.8 }}
         transition={{
           type: "spring",
           stiffness: 200,
           duration: 0.3,
         }}
-        className="min-[850px]:flex hidden flex-1 h-[462px] max-w-max items-center justify-center rounded overflow-hidden "
+        className="min-[850px]:flex hidden flex-1 h-[462px] max-w-max items-center justify-center rounded overflow-hidden"
       >
         {svg_icon_md}
       </motion.div>
