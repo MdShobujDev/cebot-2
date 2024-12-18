@@ -1,3 +1,4 @@
+"use client";
 import { motion, useInView } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { FaListUl } from "react-icons/fa6";
