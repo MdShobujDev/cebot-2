@@ -42,10 +42,7 @@ const HowItWork = ({
   }, [width]);
 
   return (
-    <motion.div
-      ref={ref}
-      className="flex gap-4 min-[850px]:p-0 p-4 h-[80vh] min-[850px]:h-auto pb-10"
-    >
+    <motion.div ref={ref} className="flex gap-4 min-[850px]:p-0 p-4  pb-10">
       {/* Left Section */}
       <div className="flex-1 w-full flex flex-col gap-5 min-[850px]:justify-normal justify-between">
         <div>

@@ -21,28 +21,28 @@ function HowItWorks() {
       description:
         "As cryptocurrencies are received, they're instantly deposited into your CEBOT Exchange account.",
       svg_icon_md: <SVG_1 />,
-      svg_icon_sm: <SVG_1 height="40vh" />,
+      svg_icon_sm: <SVG_1 height="50vh" />,
     },
     {
       title: "Customizable Conversion Rules",
       description:
         "Set your preferred conversion parameters in advance. Choose which incoming cryptocurrencies you want to auto-convert and specify the target coins.",
       svg_icon_md: <SVG_2 />,
-      svg_icon_sm: <SVG_2 height="40vh" />,
+      svg_icon_sm: <SVG_2 height="50vh" />,
     },
     {
       title: "Seamless Asset Transition",
       description:
         "Our system follows your instructions precisely, automatically converting and redirecting funds to your selected supported coins.",
       svg_icon_md: <SVG_3 />,
-      svg_icon_sm: <SVG_3 height="40vh" />,
+      svg_icon_sm: <SVG_3 height="50vh" />,
     },
     {
       title: "Efficient Portfolio Management",
       description:
         "Simplify transactions and manage your assets effortlessly through our streamlined and automated process.",
       svg_icon_md: <SVG_4 />,
-      svg_icon_sm: <SVG_4 height="40vh" />,
+      svg_icon_sm: <SVG_4 height="50vh" />,
     },
   ];
 
