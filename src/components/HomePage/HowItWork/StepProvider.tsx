@@ -9,20 +9,14 @@ const customDot: StepsProps["progressDot"] = (dot, { status }) => (
 );
 
 type StepProviderProps = {
-  handleCurrentIndex: (index: number) => void;
+  currentIndex: number;
 };
 
-const StepProvider: React.FC<StepProviderProps> = ({ handleCurrentIndex }) => {
-  const [current, setCurrent] = useState(0);
+const StepProvider: React.FC<StepProviderProps> = ({ currentIndex }) => {
   const [direction, setDirection] = useState<"vertical" | "horizontal">(
     "horizontal"
   );
   const [lineWidth, setLineWidth] = useState(1.5);
-
-  const handleStepChange = (current: number) => {
-    setCurrent(current);
-    handleCurrentIndex(current);
-  };
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 1200px)");
@@ -65,11 +59,10 @@ const StepProvider: React.FC<StepProviderProps> = ({ handleCurrentIndex }) => {
       }}
     >
       <Steps
-        current={current}
+        current={currentIndex}
         progressDot={customDot}
         direction={direction}
         size="small"
-        onChange={handleStepChange}
         items={[
           {
             title: (

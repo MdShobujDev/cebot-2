@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 import HowItWork from "./HowItWork";
 import { SVG_1, SVG_2, SVG_3, SVG_4 } from "./Icons";
 import StepProvider from "./StepProvider";
@@ -11,9 +12,10 @@ interface Step {
   svg_icon_md: React.ReactNode;
   svg_icon_sm: React.ReactNode;
 }
+
 function HowItWorks() {
-  const [current, setCurrent] = useState(0);
-  const [isOpen, setIsOpen] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
 
   const steps: Step[] = [
     {
@@ -46,38 +48,67 @@ function HowItWorks() {
     },
   ];
 
-  const handleCurrentIndex = (current: number) => {
-    setCurrent(current);
-    setIsOpen((prev) => !prev);
-  };
-  const handleClick = () => {
-    setIsOpen((prev) => !prev);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (ref.current) {
+        const sections = Array.from(ref.current.children);
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+        const newIndex = sections.findIndex((section) => {
+          const rect = section.getBoundingClientRect();
+          return (
+            rect.top + window.scrollY <= scrollPosition &&
+            rect.bottom + window.scrollY > scrollPosition
+          );
+        });
+
+        if (newIndex !== -1 && newIndex !== currentIndex) {
+          setCurrentIndex(newIndex);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [currentIndex]);
 
   return (
-    <section className=" w-full flex items-center justify-center pt-16 pb-10 relative overflow-x-hidden">
-      <div className="flex min-[1200px]:flex-row flex-col justify-between w-full min-[1200px]:gap-0 gap-7">
-        <div
-          className="min-[1200px]:basis-[22%] min-[575px]:static absolute top-32 min-[575px]:w-full w-1/2 min-[575px]:!bg-none min-[575px]:p-0 p-5 rounded-lg transition-all duration-200 ease-out z-20 
-        "
-          style={{
-            background:
-              "linear-gradient(158.86deg, #030C14 14.57%, #060D32 47.39%, #030B1F 94.45%)",
-            left: isOpen ? "-300px" : "0px",
-          }}
-        >
-          <StepProvider handleCurrentIndex={handleCurrentIndex} />
+    <section className="w-full flex items-center justify-center pt-16 pb-10">
+      <div className="flex min-[1200px]:flex-row flex-col justify-between w-full min-[1200px]:gap-0 gap-7 ">
+        {/* Sticky StepProvider */}
+        <div className=" bg-black sticky lg:top-[90px] top-[70px] py-4 min-[1200px]:basis-[22%] w-full min-[575px]:flex hidden ">
+          <div className="sticky top-32 min-[1200px]:h-[90vh] h-auto w-full">
+            {/* Adjust the `top` value if needed */}
+            <StepProvider currentIndex={currentIndex} />
+          </div>
         </div>
 
-        <div className="min-[1200px]:basis-[78%]">
-          <div className="min-w-full">
-            <HowItWork
-              title={steps[current].title}
-              description={steps[current].description}
-              svg_icon_md={steps[current].svg_icon_md}
-              svg_icon_sm={steps[current].svg_icon_sm}
-              handleClick={handleClick}
-            />
+        {/* Scrolling Content */}
+        <div className="min-[1200px]:basis-[78%] ">
+          <div ref={ref}>
+            {steps.map((step, index) => (
+              <motion.div
+                key={index}
+                className="min-w-full h-screen overflow-x-hidden "
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{
+                  opacity: currentIndex === index ? 1 : 0.5,
+                  scale: currentIndex === index ? 1 : 0.5,
+                }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
+                // style={{
+                //   position: isInView ? "sticky" : "static",
+                //   top: isInView ? "128px" : "0",
+                // }}
+              >
+                <HowItWork
+                  title={step.title}
+                  description={step.description}
+                  svg_icon_md={step.svg_icon_md}
+                  svg_icon_sm={step.svg_icon_sm}
+                />
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

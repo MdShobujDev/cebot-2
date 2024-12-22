@@ -2,7 +2,6 @@
 
 import { motion, useInView } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import { FaListUl } from "react-icons/fa6";
 import SecondaryButton from "../../Buttons/SecondaryButton";
 
 type PropsType = {
@@ -10,7 +9,6 @@ type PropsType = {
   description: string;
   svg_icon_md: React.ReactNode;
   svg_icon_sm: React.ReactNode;
-  handleClick: () => void;
 };
 
 const HowItWork = ({
@@ -18,7 +16,6 @@ const HowItWork = ({
   description,
   svg_icon_md,
   svg_icon_sm,
-  handleClick,
 }: PropsType) => {
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -42,16 +39,14 @@ const HowItWork = ({
   }, [width]);
 
   return (
-    <motion.div ref={ref} className="flex gap-4 min-[850px]:p-0 p-4  pb-10">
+    <motion.div
+      ref={ref}
+      className="flex gap-4 min-[850px]:p-0 p-4  pb-10 bg-black"
+    >
       {/* Left Section */}
       <div className="flex-1 w-full flex flex-col gap-5 min-[850px]:justify-normal justify-between">
         <div>
-          <div className="flex items-center justify-between">
-            <div className="min-[575px]:hidden block">
-              <button onClick={handleClick}>
-                <FaListUl size={22} />
-              </button>
-            </div>
+          <div className=" max-w-max">
             <motion.div
               key={title}
               initial={{ opacity: 0, x: 40 }}
@@ -80,7 +75,7 @@ const HowItWork = ({
               duration: 0.3,
               delay: 0.1,
             }}
-            className="mt-5 font-almarai font-light sm:text-5xl text-3xl -tracking-[1px] min-[575px]:text-start text-center"
+            className="mt-5 font-almarai font-light sm:text-5xl text-3xl -tracking-[1px] "
           >
             {title}
           </motion.h1>
