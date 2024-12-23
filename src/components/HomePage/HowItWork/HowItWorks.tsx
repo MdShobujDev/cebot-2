@@ -76,7 +76,7 @@ function HowItWorks() {
     <section className="w-full flex items-center justify-center md:pt-16 pt-0 pb-5">
       <div className="flex min-[1200px]:flex-row flex-col justify-between w-full min-[1200px]:gap-0 gap-5">
         {/* Sticky StepProvider */}
-        <div className=" bg-black sticky lg:top-[90px] top-[70px] py-4 min-[1200px]:basis-[22%] w-full min-[575px]:flex hidden z-40">
+        <div className=" min-[1200px]:bg-transparent bg-black sticky lg:top-[90px] top-[70px] py-4 min-[1200px]:basis-[22%] w-full min-[575px]:flex hidden z-40">
           <div className="sticky top-32 min-[1200px]:h-[90vh] h-auto min-[1200px]:w-3/4 w-full z-40">
             {/* Adjust the `top` value if needed */}
             <StepProvider currentIndex={currentIndex} />
