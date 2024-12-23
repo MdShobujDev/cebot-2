@@ -40,8 +40,8 @@ export default function RootLayout({
           />
         </head>
         <body
-          className={`${Barlow.variable} ${Almarai.variable} antialiased max-w-[1440px] mx-auto px-5
-          md:px-10 bg-neutrals-black text-neutrals-white relative scroll-smooth overflow-x-hidden`}
+          className={`${Barlow.variable} ${Almarai.variable} antialiased max-w-[1440px] mx-auto px-1
+          md:px-8 bg-neutrals-black text-neutrals-white relative scroll-smooth overflow-x-hidden`}
         >
           <AntdRegistry>
             <NavBar />
