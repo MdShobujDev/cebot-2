@@ -48,15 +48,14 @@ const HowItWork = ({
         <div>
           <div className=" max-w-max">
             <motion.div
-              key={title}
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 40 }}
-              transition={{
-                type: "spring",
-                stiffness: 200,
-                duration: 0.3,
-                delay: 0.05,
-              }}
+            // key={title}
+            // initial={{ opacity: 0, x: 40 }}
+            // animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 40 }}
+            // transition={{
+            //   type: "spring",
+            //   duration: 0.3,
+            //   delay: 0.05,
+            // }}
             >
               <SecondaryButton
                 href="/"
@@ -66,15 +65,14 @@ const HowItWork = ({
             </motion.div>
           </div>
           <motion.h1
-            key={title}
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 40 }}
-            transition={{
-              type: "spring",
-              stiffness: 200,
-              duration: 0.3,
-              delay: 0.1,
-            }}
+            // key={title}
+            // initial={{ opacity: 0, x: 40 }}
+            // animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 40 }}
+            // transition={{
+            //   type: "spring",
+            //   duration: 0.3,
+            //   delay: 0.1,
+            // }}
             className="mt-5 font-almarai font-light sm:text-5xl text-3xl -tracking-[1px] "
           >
             {title}
@@ -84,30 +82,28 @@ const HowItWork = ({
         {fixedWidth && (
           <motion.div
             className="self-center"
-            key={title}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 200,
-              duration: 0.3,
-              ease: "easeInOut",
-            }}
+            // key={title}
+            // initial={{ opacity: 0, scale: 0.8 }}
+            // animate={{ opacity: 1, scale: 1 }}
+            // transition={{
+            //   type: "spring",
+            //   duration: 0.3,
+            //   ease: "easeInOut",
+            // }}
           >
             {svg_icon_sm}
           </motion.div>
         )}
 
         <motion.p
-          key={description}
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 40 }}
-          transition={{
-            type: "spring",
-            stiffness: 200,
-            duration: 0.3,
-            delay: 0.2,
-          }}
+          // key={description}
+          // initial={{ opacity: 0, x: 40 }}
+          // animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 40 }}
+          // transition={{
+          //   type: "spring",
+          //   duration: 0.3,
+          //   delay: 0.2,
+          // }}
           className="font-barlow sm:text-base text-xs font-light text-[#DEDEDE] min-[575px]:text-start text-center "
         >
           {description}
@@ -116,14 +112,13 @@ const HowItWork = ({
 
       {/* Right Section: Image */}
       <motion.div
-        key={title}
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.8 }}
-        transition={{
-          type: "spring",
-          stiffness: 200,
-          duration: 0.3,
-        }}
+        // key={title}
+        // initial={{ opacity: 0, scale: 0.8 }}
+        // animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.8 }}
+        // transition={{
+        //   type: "spring",
+        //   duration: 0.3,
+        // }}
         className="min-[850px]:flex hidden flex-1 h-[462px] max-w-max items-center justify-center rounded overflow-hidden"
       >
         {svg_icon_md}

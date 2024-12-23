@@ -94,7 +94,7 @@ function HowItWorks() {
                 animate={{
                   scale: currentIndex === index ? 1 : 0.8,
                 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                transition={{ type: "spring", damping: 10 }}
               >
                 <HowItWork
                   title={step.title}
