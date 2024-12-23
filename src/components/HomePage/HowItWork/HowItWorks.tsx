@@ -73,7 +73,7 @@ function HowItWorks() {
   }, [currentIndex]);
 
   return (
-    <section className="w-full flex items-center justify-center pt-16 ">
+    <section className="w-full flex items-center justify-center pt-16">
       <div className="flex min-[1200px]:flex-row flex-col justify-between w-full min-[1200px]:gap-0 gap-5 ">
         {/* Sticky StepProvider */}
         <div className=" bg-black sticky lg:top-[90px] top-[70px] py-4 min-[1200px]:basis-[22%] w-full min-[575px]:flex hidden ">

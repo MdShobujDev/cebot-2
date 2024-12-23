@@ -28,7 +28,7 @@ const NavBar: React.FC = () => {
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
-    <nav className="sticky top-0 font-barlow py-5 flex justify-between items-center z-50 bg-black bg-opacity-70 backdrop-blur-lg">
+    <nav className="sticky top-0 font-barlow py-5 flex justify-between items-center z-50 bg-black bg-opacity-70 backdrop-blur-lg px-2">
       {/* Logo */}
       <div className="cursor-pointer">
         <Link href="/">

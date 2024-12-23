@@ -34,7 +34,7 @@ function ContactUs() {
   };
 
   return (
-    <section className="flex w-full">
+    <section className="flex w-full overflow-hidden">
       <div
         className="sm:flex hidden flex-1 min-h-fit bg-no-repeat md:bg-right bg-center bg-cover"
         style={{
