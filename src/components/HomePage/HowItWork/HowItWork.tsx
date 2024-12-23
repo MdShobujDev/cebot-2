@@ -39,9 +39,12 @@ const HowItWork = ({
   }, [width]);
 
   return (
-    <motion.div ref={ref} className="flex gap-4 min-[850px]:p-0 p-4  bg-black">
+    <motion.div
+      ref={ref}
+      className="flex gap-4 min-[850px]:px-0 px-4  bg-black"
+    >
       {/* Left Section */}
-      <div className="flex-1 w-full flex flex-col gap-5 min-[850px]:justify-normal justify-between">
+      <div className="flex-1 w-full flex flex-col gap-5 min-[850px]:justify-normal justify-between sm:h-auto h-[90vh]">
         <div>
           <div className=" max-w-max">
             <motion.div
@@ -105,7 +108,7 @@ const HowItWork = ({
             duration: 0.3,
             delay: 0.2,
           }}
-          className="font-barlow sm:text-base text-xs font-light text-[#DEDEDE] min-[575px]:text-start text-center"
+          className="font-barlow sm:text-base text-xs font-light text-[#DEDEDE] min-[575px]:text-start text-center "
         >
           {description}
         </motion.p>

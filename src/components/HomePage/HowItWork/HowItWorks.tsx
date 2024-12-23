@@ -73,7 +73,7 @@ function HowItWorks() {
   }, [currentIndex]);
 
   return (
-    <section className="w-full flex items-center justify-center pt-16">
+    <section className="w-full flex items-center justify-center md:pt-16 pt-0 pb-5">
       <div className="flex min-[1200px]:flex-row flex-col justify-between w-full min-[1200px]:gap-0 gap-5">
         {/* Sticky StepProvider */}
         <div className=" bg-black sticky lg:top-[90px] top-[70px] py-4 min-[1200px]:basis-[22%] w-full min-[575px]:flex hidden z-40">
@@ -89,7 +89,7 @@ function HowItWorks() {
             {steps.map((step, index) => (
               <motion.div
                 key={index}
-                className="min-w-full h-screen overflow-x-hidden "
+                className="min-w-full h-[90vh] overflow-x-hidden"
                 initial={{ scale: 0.8 }}
                 animate={{
                   scale: currentIndex === index ? 1 : 0.8,
