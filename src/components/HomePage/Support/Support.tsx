@@ -20,7 +20,7 @@ function Support() {
             backgroundImage: `url(${Ipad.src})`,
           }}
         >
-          <div className="flex flex-col gap-36  justify-between bg-[#030C14]/10 backdrop-blur-sm lg:bg-none ">
+          <div className="flex flex-col gap-36  justify-between bg-[#030C14]/20 backdrop-blur-md lg:bg-none ">
             <div>
               <div className=" max-w-max">
                 <SecondaryButton

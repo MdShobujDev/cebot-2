@@ -73,18 +73,18 @@ function HowItWorks() {
   }, [currentIndex]);
 
   return (
-    <section className="w-full flex items-center justify-center pt-16 pb-10">
-      <div className="flex min-[1200px]:flex-row flex-col justify-between w-full min-[1200px]:gap-0 gap-7 ">
+    <section className="w-full flex items-center justify-center pt-16 ">
+      <div className="flex min-[1200px]:flex-row flex-col justify-between w-full min-[1200px]:gap-0 gap-5 ">
         {/* Sticky StepProvider */}
         <div className=" bg-black sticky lg:top-[90px] top-[70px] py-4 min-[1200px]:basis-[22%] w-full min-[575px]:flex hidden ">
-          <div className="sticky top-32 min-[1200px]:h-[90vh] h-auto w-full">
+          <div className="sticky top-32 min-[1200px]:h-[90vh] h-auto min-[1200px]:w-3/4 w-full">
             {/* Adjust the `top` value if needed */}
             <StepProvider currentIndex={currentIndex} />
           </div>
         </div>
 
         {/* Scrolling Content */}
-        <div className="min-[1200px]:basis-[78%] ">
+        <div className="min-[1200px]:basis-[78%] mt-3">
           <div ref={ref}>
             {steps.map((step, index) => (
               <motion.div
@@ -96,10 +96,6 @@ function HowItWorks() {
                   scale: currentIndex === index ? 1 : 0.8,
                 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                // style={{
-                //   position: isInView ? "sticky" : "static",
-                //   top: isInView ? "128px" : "0",
-                // }}
               >
                 <HowItWork
                   title={step.title}
