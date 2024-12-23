@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import SecondaryButton from "../../Buttons/SecondaryButton";
 
@@ -18,7 +18,7 @@ const HowItWork = ({
   svg_icon_sm,
 }: PropsType) => {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  // const isInView = useInView(ref);
 
   const [width, setWidth] = useState<number | null>(null);
   const [fixedWidth, setFixedWidth] = useState(false);
