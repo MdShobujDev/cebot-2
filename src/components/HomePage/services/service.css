@@ -7,3 +7,7 @@
     align-self: normal !important;
   }
 }
+
+.ant-tabs-nav-operations {
+  display: flex !important;
+}
